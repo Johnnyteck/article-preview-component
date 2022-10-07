@@ -1,34 +1,202 @@
-/* # Front-end Style Guide
+:root {
+    --very-dark-grayish-blue :hsl(219, 17%, 19%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%)
+}
 
-## Layout
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
-The designs were created to the following widths:
+body {
+    font-family: 'Manrope', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-- Mobile: 375px
-- Desktop: 1440px
+    background-color: var(--light-grayish-blue)
+}
 
-## Colors
+img {
+    width: 100%;
 
-- Very Dark Grayish Blue: hsl(217, 19%, 35%)
-- Desaturated Dark Blue: hsl(214, 17%, 51%)
-- Grayish Blue: hsl(212, 23%, 69%)
-- Light Grayish Blue: hsl(210, 46%, 95%)
+}
 
-## Typography
+.main {
+    max-width: 40rem;
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
-### Body Copy
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
 
-- Font size: 13px
+.main-image {
+    width: 100%;
+}
 
-### Headings
+.main-image > img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
 
-- Family: [Manrope](https://fonts.google.com/specimen/Manrope)
-- Weights: 500, 700
+.main-content {
+    padding: 1.75rem;
+    background-color: hsl(0, 0%, 100%);
 
-## Icons
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-We provide SVGs for the social icons. But please feel free to use a font icon library if you like. Some suggestions can be found below:
+.main-content h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--very-dark-grayish-blue);
+}
 
-- [Font Awesome](https://fontawesome.com)
-- [IcoMoon](https://icomoon.io)
-- [Ionicons](https://ionicons.com) */
+.main-content > p {
+    font-size: 0.8rem;
+    margin: 1rem 0;
+    color: var(--very-dark-grayish-blue);
+    font-weight: 500;
+}
+
+.main-content .avatar {
+    width: 10%;
+    border-radius: 50%;
+}
+
+.main-content .social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.avatar-details h3 {
+    font-size: 0.75rem;
+    color: var(--very-dark-grayish-blue);
+    font-weight: 700;
+}
+
+.avatar-details p {
+    font-size: 0.75rem;
+    color: var(--grayish-blue);
+}
+
+.share-icon {
+    margin-left: auto;
+}
+
+.share-icon ion-icon {
+    padding: 0.75rem;
+    border-radius: 50%;
+    font-size: 1.25rem;
+}
+
+.hover-state{
+    display: none;
+}
+
+
+.hover-state a {
+    text-decoration: none;
+    color: var(--grayish-blue);
+    font-family: inherit;
+    letter-spacing: 0.25em;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.hover-state div {
+    display: flex;
+    gap: 1rem;
+}
+
+.hover-state div > * {
+    display: block;
+    color: hsl(0, 0%, 100%);
+    font-size: 1.25rem;
+}
+
+.hover-state::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: inherit;
+    bottom: -10px;
+    right: 56px;
+    transform: rotate(225deg);
+    clip-path: polygon(0% 100%, 0 0, 100% 0);
+}
+
+.share-icon:active {
+    transition:0s;
+}
+
+.share-icon:active + .hover-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    background-color: var(--desaturated-dark-blue);
+    padding: 8px 24px;
+    border-radius: 4px;
+
+    position: absolute;
+    top: -48px;
+    right: -45px;   
+}
+
+
+@media screen and (max-width:28rem) {
+    body {
+        height: unset;
+    }
+    .main {
+        max-width: unset;
+        margin: 2rem;
+        flex-direction: column;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+    margin: 1rem 0;  
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
